@@ -11,7 +11,7 @@ const PrefferredAirports = () => {
         navigate(-1);
     };
     const handleContinue = () => {
-        navigate('/addpayment')
+        navigate('/accommodation')
     }
 
     return (

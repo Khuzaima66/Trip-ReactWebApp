@@ -10,6 +10,9 @@ const PrefferredAirports = () => {
     const handleBack = () => {
         navigate(-1);
     };
+    const handleContinue = () => {
+        navigate('/addpayment')
+    }
 
     return (
         <div>
@@ -30,17 +33,17 @@ const PrefferredAirports = () => {
 
 
                     <div className='airports-search-box'>
-                        <img src="/src/assets/Cross.png" alt="CrossIcon" className='airports-cross-icon' />
+                        <img src="/assets/Cross.png" alt="CrossIcon" className='airports-cross-icon' />
                         <span className='airports-search-box-text'>KHI - Karachi</span>
                     </div>
 
 
-                    <Button className='airports-continue-button'>Continue</Button>
+                    <Button onClick={handleContinue} className='airports-continue-button'>Continue</Button>
 
                 </div>
 
                 <div className='airports-right-side'>
-                    <img src="/src/assets/PreferredAirpot.png" alt="PreferredAirpot" className='airports-prefferred-image' />
+                    <img src="/assets/PreferredAirpot.png" alt="PreferredAirpot" className='airports-prefferred-image' />
                 </div>
             </div>
         </div>

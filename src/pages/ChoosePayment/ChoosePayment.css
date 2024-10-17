@@ -1,0 +1,21 @@
+.choose-payment-new-method-text {
+    font-size: 30px;
+    color: #6E6E6E;
+    padding-left: 7vw;
+    padding-top: 5vh;
+    font-weight: bold;
+}
+
+.choose-payment-method-subtitle {
+    font-size: 16px;
+    color: #6E6E6E;
+    padding-top: 2.5vh;
+    padding-left: 7vw;
+}
+
+.choose-payment-button {
+    margin-left: 7vw;
+    width: 12vw;
+    height: 6.5vh;
+    margin-top: 4vh;
+}

@@ -1,18 +1,24 @@
-import React from 'react'
-import './PrefferredAirports.css'
-import LogoBack from '../../Components/LogoBack'
+import React, { useState } from 'react';
+import './PrefferredAirports.css';
+import LogoBack from '../../Components/LogoBack';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../Components/Button';
 
 const PrefferredAirports = () => {
     const navigate = useNavigate();
+    const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(true);
 
     const handleBack = () => {
         navigate(-1);
     };
+
     const handleContinue = () => {
-        navigate('/accommodation')
-    }
+        navigate('/accommodation');
+    };
+
+    const handleRemoveSearchBox = () => {
+        setIsSearchBoxVisible(false);
+    };
 
     return (
         <div>
@@ -28,18 +34,23 @@ const PrefferredAirports = () => {
                     <p className='airports-subtitle'>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />xxxxxxxxxxxxxxxxxxxx</p>
 
                     <div className='airports-search-container'>
-                        <input type='text' placeholder='Seach here' className='airports-search-input' />
+                        <input type='text' placeholder='Search here' className='airports-search-input' />
                     </div>
 
-
-                    <div className='airports-search-box'>
-                        <img src="/assets/Cross.png" alt="CrossIcon" className='airports-cross-icon' />
-                        <span className='airports-search-box-text'>KHI - Karachi</span>
-                    </div>
-
+                    {/* Conditionally render the search box */}
+                    {isSearchBoxVisible && (
+                        <div className='airports-search-box'>
+                            <img
+                                src="/assets/Cross.png"
+                                alt="CrossIcon"
+                                className='airports-cross-icon'
+                                onClick={handleRemoveSearchBox}
+                            />
+                            <span className='airports-search-box-text'>KHI - Karachi</span>
+                        </div>
+                    )}
 
                     <Button onClick={handleContinue} className='airports-continue-button'>Continue</Button>
-
                 </div>
 
                 <div className='airports-right-side'>
@@ -47,7 +58,7 @@ const PrefferredAirports = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default PrefferredAirports
+export default PrefferredAirports;

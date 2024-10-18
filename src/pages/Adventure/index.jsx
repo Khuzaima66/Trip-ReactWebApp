@@ -6,14 +6,22 @@ import "./adventure.css";
 
 function Adventure() {
   const navigate = useNavigate();
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImages, setSelectedImages] = useState([]);
 
   const handleBack = () => {
     navigate(-1);
   };
 
   const handleContinue = () => {
-    navigate("/addpayment");
+    navigate("/subscription");
+  };
+
+  const toggleImageSelection = (imageId) => {
+    if (selectedImages.includes(imageId)) {
+      setSelectedImages(selectedImages.filter((id) => id !== imageId));
+    } else {
+      setSelectedImages([...selectedImages, imageId]);
+    }
   };
 
   const images = [
@@ -101,15 +109,15 @@ function Adventure() {
               <div
                 key={image.id}
                 className="image-item"
-                onClick={() => setSelectedImage(image.id)}
+                onClick={() => toggleImageSelection(image.id)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
+                  className={`image-item-style ${selectedImages.includes(image.id) ? "selected" : ""
+                    }`}
                 />
-                <p>
-                  {image.title}
-                </p>
+                <p>{image.title}</p>
               </div>
             ))}
           </div>

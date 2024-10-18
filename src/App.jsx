@@ -12,6 +12,7 @@ import EnterCardDetail from "./pages/EnterCardDetail"
 import CheckoutPayment from "./pages/CheckoutPayment"
 import Accommodation from "./pages/Accommadations"
 import Adventure from "./pages/Adventure"
+import SubscriptionPage from "./pages/Subscription"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route eaxct path='/preferredairports' element={<PrefferredAirports />} />
         <Route eaxct path='/accommodation' element={<Accommodation />} />
         <Route eaxct path='/adventure' element={<Adventure />} />
+        <Route eaxct path='/subscription' element={<SubscriptionPage />} />
         <Route eaxct path='/addpayment' element={<AddPayment />} />
         <Route eaxct path='/choosepayment' element={<ChoosePayment />} />
         <Route eaxct path='/entercarddetail' element={<EnterCardDetail />} />

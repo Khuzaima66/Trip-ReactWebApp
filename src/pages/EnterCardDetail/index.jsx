@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import PaymentHeader from '../../Components/PaymentHeader'
 import './EnterCardDetail.css'
 import Button from '../../Components/Button';
+import PaymentPopup from '../../Components/PaymentPopup';
 
 const EnterCardDetail = () => {
     const navigate = useNavigate();
+    const [ showPopUp, setShowPopUp] = useState(false)
 
     const handleBack = () => {
         navigate(-1);
     };
+
     const handleContinue = () => {
-        navigate('/checkoutpayment');
+        setShowPopUp(true);
     };
+
+    const handleOkay = () => {
+        navigate('/checkoutpayment');
+        setShowPopUp(false);
+    };
+
 
 
     return (
@@ -55,7 +64,10 @@ const EnterCardDetail = () => {
 
 
 
+            <PaymentPopup isVisible={showPopUp} onClick={handleOkay} />
+          
             <Button onClick={handleContinue} className='enter-card-detail-button'>Continue</Button>
+
         </div>
     )
 }

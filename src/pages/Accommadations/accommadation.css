@@ -101,13 +101,17 @@
   justify-content: center;
 }
 
-.image-item img {
+.image-item-style {
   width: 100%;
   height: auto;
   max-height: 140px;
   background-color: #F3F3F3;
   border-radius: 8px;
-
+  object-fit: cover;
+}
+.image-item-style.selected {
+  border: 5px solid #7346D2;
+  border-radius: 12px;
 }
 
 .image-item p {

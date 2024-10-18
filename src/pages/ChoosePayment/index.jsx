@@ -5,7 +5,7 @@ import './ChoosePayment.css'
 import Button from '../../Components/Button';
 
 const ChoosePayment = () => {
-    const [selectedMethod, setSelectedMethod] = useState(null);
+    const [selectedMethod, setSelectedMethod] = useState(1);
 
     const paymentMethods = [
         { id: 1, name: 'Credit / Debit card', icon: '/assets/creditdebitcard.png' },

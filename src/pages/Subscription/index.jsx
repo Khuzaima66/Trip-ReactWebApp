@@ -7,7 +7,11 @@ import Button from '../../Components/Button';
 function SubscriptionPage() {
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const [billingPeriod, setBillingPeriod] = useState("monthly");
+  const [isYearly, setIsYearly] = useState(false);
+
+  const togglePlan = () => {
+    setIsYearly(!isYearly);
+  };
 
   const handleBack = () => {
     navigate(-1);
@@ -17,9 +21,6 @@ function SubscriptionPage() {
     setSelectedPlan(plan);
   };
 
-  const handleBillingToggle = () => {
-    setBillingPeriod(billingPeriod === "monthly" ? "yearly" : "monthly");
-  };
 
   const handleContinue = () => {
     navigate('/addpayment');
@@ -39,24 +40,24 @@ function SubscriptionPage() {
           </p>
         </div>
 
-        <div className="toggle-billing">
-          <div className="billing-toggle" onClick={handleBillingToggle}>
-            <div
-              className="billing-switch"
-              style={{
-                left: billingPeriod === "yearly" ? "50%" : "0%",
-              }}
-            ></div>
-            <div className="billing-text">
-              <span className={billingPeriod === "monthly" ? "active" : ""}>
-                Monthly
-              </span>
-              <span className={billingPeriod === "yearly" ? "active" : ""}>
-                Yearly (-20%)
-              </span>
+
+
+        <div className="toggle-container">
+          <div
+            className={`toggle-switch ${isYearly ? 'yearly-active' : 'monthly-active'}`}
+            onClick={togglePlan}
+          >
+            <div className="option monthly">
+              <span>Monthly</span>
+            </div>
+            <div className="option yearly">
+              <span>Yearly</span>
+              <div className="discount">-20%</div>
             </div>
           </div>
         </div>
+
+
 
         <div className="m2-s">
           <div

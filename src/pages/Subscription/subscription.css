@@ -81,63 +81,6 @@
   display: block;
 }
 
-.toggle-billing {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.billing-toggle {
-  display: flex;
-  align-items: center;
-  background-color: #EFE8FE;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  cursor: pointer;
-  padding: 3px;
-  width: 208px;
-  height: 30px;
-  position: relative;
-}
-
-.billing-switch {
-  width: 50%;
-  height: 100%;
-  background-color: #7346D2;
-  border-radius: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: left 0.3s ease;
-}
-
-.billing-text {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  z-index: 1;
-  background-color: #EFE8FE;
-  position: relative;
-}
-
-.billing-text span {
-  flex: 1;
-  text-align: center;
-  z-index: 2;
-  background-color: #EFE8FE;
-  transition: color 0.3s ease;
-  color: #333;
-}
-
-.billing-toggle.active .billing-switch {
-  left: 50%;
-
-}
-
-.billing-toggle .billing-text span.active {
-  color: #fff;
-  background-color: #7346D2;
-}
 
 .pricing-table {
   display: grid;
@@ -203,4 +146,120 @@
   width: 12vw;
   height: 6.5vh;
   margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.toggle-switch {
+  display: flex;
+  background-color: #EFE8FE;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  width: 300px;
+  height: 50px;
+}
+
+.option {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 100px;
+  color: #6c3bb5;
+  background-color: #EFE8FE;
+}
+
+/* Update for the discount span */
+.yearly .discount {
+  color: #ffb800;
+  font-weight: 700;
+  margin-left: 5px;
+  background-color: #EFE8FE;
+}
+
+/* Yearly Active */
+.yearly-active .yearly {
+  background-color: #7346D2;
+}
+
+.yearly-active .yearly span {
+  background-color: #7346D2; /* Span background color */
+  color: white; /* Span text color */
+}
+
+.yearly-active .yearly .discount {
+  color: #ffb800;
+  background-color: #7346D2;
+}
+
+.yearly-active .monthly span {
+  color: #6c3bb5; /* Inactive monthly text */
+  background-color: #EFE8FE; /* Inactive monthly background */
+}
+
+/* Monthly Active */
+.monthly-active .monthly {
+  background-color: #7346D2;
+}
+
+.monthly-active .monthly span {
+  background-color: #7346D2;
+  color: white;
+}
+
+.monthly-active .yearly span {
+  color: #6c3bb5; /* Inactive yearly text */
+  background-color: #EFE8FE; /* Inactive yearly background */
+}
+
+/* Background highlight for selected item */
+.yearly-active .yearly::before,
+.monthly-active .monthly::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6c3bb5;
+  border-radius: 25px;
+  width: 130px;
+  height: 40px;
+  z-index: -1;
+  transition: all 0.3s ease;
 }

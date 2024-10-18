@@ -98,7 +98,11 @@ function Adventure() {
             We&apos;ll use your choices to find <br />
             attractions you&apos;ll love!
           </p>
-          <Button onClick={handleContinue} className="continue-button ">
+          <Button
+            onClick={handleContinue}
+            className={`continue-button ${selectedImages.length === 0 ? "disabled-button" : ""}`}
+            disabled={selectedImages.length === 0}
+          >
             Continue
           </Button>
         </div>

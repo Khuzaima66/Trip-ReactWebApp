@@ -64,7 +64,7 @@ const EnterCardDetail = () => {
 
 
 
-            <PaymentPopup isVisible={showPopUp} onClick={handleOkay} />
+            <PaymentPopup isVisible={showPopUp} onClick={handleOkay} onCrossClick={() => setShowPopUp(false)} />
           
             <Button onClick={handleContinue} className='enter-card-detail-button'>Continue</Button>
 

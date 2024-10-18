@@ -49,7 +49,12 @@ function Accommodation() {
             Unlock <br /> Accommodations <br /> You&apos;ll Love!
           </h1>
           <p className="find-deals-text">Craft Your Dream Trip!</p>
-          <Button onClick={handleContinue} className="continue-button">
+          {/* Button is disabled when no image is selected */}
+          <Button
+            onClick={handleContinue}
+            className={`continue-button ${selectedImages.length === 0 ? "disabled-button" : ""}`}
+            disabled={selectedImages.length === 0}
+          >
             Continue
           </Button>
         </div>

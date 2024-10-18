@@ -31,6 +31,19 @@
     color: #C5C5C5;
 }
 
+.get-emailerror-text {
+    color: red;
+    text-align: center;
+}
+
+.email-input.focused {
+    border-color: #7346D2;
+}
+
+.email-input.error {
+    border-color: red;
+}
+
 .button-container {
     display: flex;
     justify-content: center;

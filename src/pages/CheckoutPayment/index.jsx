@@ -11,7 +11,7 @@ const CheckoutPayment = () => {
         navigate(-1);
     };
     const handlePayNow = () => {
-        navigate('/');
+        navigate('/profile');
     };
 
     return (

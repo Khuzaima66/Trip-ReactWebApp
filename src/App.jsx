@@ -13,6 +13,9 @@ import CheckoutPayment from "./pages/CheckoutPayment"
 import Accommodation from "./pages/Accommadations"
 import Adventure from "./pages/Adventure"
 import SubscriptionPage from "./pages/Subscription"
+import Profile from "./pages/Profile"
+import Notification from "./pages/Notification"
+import Language from "./pages/Language"
 
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
         <Route eaxct path='/choosepayment' element={<ChoosePayment />} />
         <Route eaxct path='/entercarddetail' element={<EnterCardDetail />} />
         <Route eaxct path='/checkoutpayment' element={<CheckoutPayment />} />
+        <Route eaxct path='/profile' element={<Profile />} />
+        <Route eaxct path='/notifications' element={<Notification />} />
+        <Route eaxct path='/language' element={<Language />} />
       </Routes>
     </>
   )

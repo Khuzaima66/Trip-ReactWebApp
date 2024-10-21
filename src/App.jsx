@@ -16,6 +16,7 @@ import SubscriptionPage from "./pages/Subscription"
 import Profile from "./pages/Profile"
 import Notification from "./pages/Notification"
 import Language from "./pages/Language"
+import Preferences from "./pages/Preferences"
 
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
         <Route eaxct path='/profile' element={<Profile />} />
         <Route eaxct path='/notifications' element={<Notification />} />
         <Route eaxct path='/language' element={<Language />} />
+        <Route eaxct path='/preferences' element={<Preferences />} />
+
       </Routes>
     </>
   )
